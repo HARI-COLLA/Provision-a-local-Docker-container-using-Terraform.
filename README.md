@@ -21,30 +21,36 @@ To provision a Docker container running the Nginx web server using **Terraform**
 
 
 
-
 ---
 
-## ⚙️ Steps Followed
+## ⚙️ Steps Performed
 
-1. Installed Docker and Terraform on the local machine
-2. Created a `main.tf` file defining:
+1. Installed Docker and Terraform locally.
+2. Created a `main.tf` file with:
    - Docker provider
-   - Nginx Docker image
-   - Docker container named `nginx-server`
-3. Ran the following Terraform commands:
-   - `terraform init`
-   - `terraform plan`
-   - `terraform apply`
-4. Resolved port conflict by stopping processes using port 8080
-5. Verified the container was running using `docker ps` and accessed Nginx via `http://localhost:8080`
+   - Nginx image resource
+   - Docker container resource named `nginx-server`
+3. Executed Terraform commands to:
+   - Initialize the project
+   - Preview planned infrastructure
+   - Apply the configuration
+4. Resolved port conflict (8080) by stopping existing services.
+5. Verified successful deployment using `docker ps` and browser access to `http://localhost:8080`
+6. Finally, used `terraform destroy` to clean up the created infrastructure.
 
 ---
 
 ## 🔄 Terraform Commands Used
 
 ```bash
-terraform init
-terraform plan
-terraform apply
-terraform destroy
-docker ps
+terraform init          # Initializes the project
+terraform plan          # Shows the execution plan
+terraform apply         # Provisions the container
+terraform destroy       # Tears down the infrastructure
+docker ps               # Verifies running container
+
+
+
+
+
+
